@@ -19,7 +19,7 @@ class Solution {
             charMap.put(charRight, charMap.get(charRight)+1);
             lengthLongestSubstring = Math.max(
                 lengthLongestSubstring, 
-                charMap.values().stream().mapToInt(Integer::intValue).sum()
+                right-left+1
             );
         }
 
