@@ -31,10 +31,7 @@ class Solution {
                 }
             }
 
-            while(true) {
-                if (haveSum != needSum) {
-                    break;
-                }
+            while(haveSum == needSum) {
 
                 if (resSize > right - left + 1) {
                     resSize = right - left + 1;
@@ -45,15 +42,10 @@ class Solution {
                 Character leftChar = s.charAt(left);
                 
                 if(have.containsKey(leftChar)) {
-                    if (haveSum == needSum) {
-                        if (have.get(leftChar) <= need.get(leftChar)) {
-                            haveSum--;
-                        }
-                        have.put(leftChar, have.get(leftChar)-1);
-                    } else {
-                        break;
+                    if (have.get(leftChar) <= need.get(leftChar)) {
+                        haveSum--;
                     }
-
+                    have.put(leftChar, have.get(leftChar)-1);
                 }
 
                 left++;
